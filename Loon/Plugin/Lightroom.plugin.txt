@@ -1,0 +1,15 @@
+#从这里复制的https://raw.githubusercontent.com/demo2099/jscool/master/Js.conf
+
+[Script]
+#http-request 正则表达式 script-path=脚本路径,tag = 脚本名称,enable=脚本状态（写 true 为启用，false 为禁用）
+#http-request ^https?:\/\/(www.)?(example)\.com script-path=localscript.js,tag = requestScript,enable=true
+
+#http-response 正则表达式 script-path=脚本路径,timeout=时间（单位为秒）,requires-body = 是否包含Body（写 true 为是，false 为否）,tag = 脚本名称,enable=脚本状态（写 true 为启用，false 为禁用）
+#http-response ^https?:\/\/(www.)?(example)\.com script-path=https://example.com/loon.js,timeout=10,requires-body = true,tag = responseScript,enable=true
+
+http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path= https://raw.githubusercontent.com/langkhach270389/Scripting/master/Lightroom.js,timeout=10,requires-body=true,tag=Lightroom
+
+http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path= https://raw.githubusercontent.com/langkhach270389/Scripting/master/photoshop.js,timeout=10,requires-body=true,tag=PSexpress
+
+[MITM]
+hostname = photos.adobe.io,lcs-mobile-cops.adobe.io
